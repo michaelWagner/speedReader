@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name='viewport' content="initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" href="speedReader.css">
+		<script src="speedReader.js"></script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+
+			<div class="header">
+
+				<div class="logo"></div>
+
+				<div class="menu-tab">
+					<div class="menu-lines"></div>
+					<div class="menu-lines"></div>
+					<div class="menu-lines"></div>
+				</div>
+
+			</div>
+			<div class="content" id="content">
+
+				<br><br>
+
+	      <form class="text-input-box" id="text-input-box">
+
+					<textarea id="text-input" name="inputbox" value=""
+				  rows="17" cols="58" autofocus>
+					</textarea>
+
+					<br>
+
+					<input type="radio" name="group1" class="radio-buttons"
+						id="radio-text-box" style="margin-left:10px;" value="text-input"
+						onClick="getRadioValue()" checked> Text-Box<br>
+
+					<input type="radio" name="group1" class="radio-buttons"
+						id="radio-file-upload" value="file-input"
+						onClick="getRadioValue()" style="margin-left:10px;">
+						File Upload
+						<input type="file" id="file-input" value="" /><br><br>
+						<!-- <input type="submit" value="Submit" action="/upload" enctype="multipart/form-data" method="post"> -->
+				</form>
+
+				<div id="display-wrapper" style="display:none">
+
+					<div class="esc">
+						<button class="escape-button" id="escape-fullScreen-button" type="button" name=""
+							value="" onClick="exitFullScreen();">
+						</button>
+					</div>
+					<div class="box-top"></div>
+					<div class="pointer-top"></div>
+					<div id="text-display"></div>
+					<div class="pointer-bottom"></div>
+					<div class="box-bottom"></div>
+
+				</div>
+
+				<div class="control-buttons">
+					<div class="counter-box">
+						<span class="word-counter">Words Read: </span>
+						<br>
+						<span class="timer">Time Elapsed: </span>
+						<span class="word-timer"></span>
+					</div>
+
+					<button class="enter-fullscreen" id="enter-fullScreen-button" type="button" name=""
+						value="" onClick="displayAtFullScreen();">
+					</button>
+
+					<button class="restart-button" id="restart-read" type="button" name=""
+						value="">
+						<img src="images/restart-button.png" width="48" height="48" margin="1" />
+					</button>
+
+					<button class="play-button" type="button" name="" value=""
+						onClick="displayTextAtSpeed()"><img src="images/play-button.png" width="48" height="48" margin="1" /></button>
+
+					<button class="pause-button" id="pause-read" type="button" name=""
+						value="">
+						<img src="images/pause-button.png" width="48" height="48" margin="1" />
+					</button>
+
+					<button class="stop-button" id="stop-read" type="button" name=""
+						value="">
+						<img src="images/stop-button.png" width="48" height="48" margin="1" />
+					</button>
+
+					<button class="settings" id="settings" type="button" name="">
+						<img src="images/settings-tab.png" class="settings" width="110" height="25" />
+					</button>
+					<div class="settings-tab" id="settings-tab" style="display:none">
+
+						<table>
+
+							<tr>
+
+								<td width="170">Words per minute:</td>
+
+								<td><input id="wpm" type="form" style="width:60px" name="words-per-minute" value="250" ></td>
+
+							</tr>
+
+							<tr>
+
+								<td>Font size</td>
+
+								<td>
+
+									<select id="font-size">
+										<option>20</option>
+										<option>30</option>
+										<option selected="selected">40</option>
+										<option>50</option>
+										<option>60</option>
+										<option>70</option>
+										<option>80</option>
+									</select>
+
+								</td>
+
+							</tr>
+
+							<tr>
+
+								<td>Full Screen</td>
+
+								<td class="onoffswitch">
+
+							    <input type="checkbox" name="onoffswitch"
+							    	class="onoffswitch-checkbox" id="full-screen-switch">
+							    <label class="onoffswitch-label" for="full-screen-switch" checked>
+							    	<div class="onoffswitch-inner"></div>
+							    	<div class="onoffswitch-switch"></div>
+							    </label>
+
+							  </td>
+
+							</tr>
+
+						</table>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div id="hiddenDiv" style="display:none"></div>
+
+      <div class="push"></div>
+
+    </div>
+
+    <div class="footer">
+
+      <p class="copyright">Michael Wagner &copy;
+      	2014 &nbsp;</p>
+
+    </div>
+
+	</body>
+
+</html>
